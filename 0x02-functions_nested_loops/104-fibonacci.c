@@ -19,7 +19,7 @@ int main(void)
 	second = 1;
 	count = 0;
 
-	while (count = 98)
+	while (count < 98)
 	{
 		sum = first + second;
 		printf("%lu, ", sum);

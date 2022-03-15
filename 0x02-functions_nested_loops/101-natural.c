@@ -3,7 +3,9 @@
 /**
  * main - list all natural numbers multiples of 3 & 5
  *
- * Retrun: Always 0.
+ * Description: list all natural numbers multiples of 3 & 5
+ *
+ * Return: Always 0.
  */
 
 int main(void)
@@ -12,7 +14,7 @@ int main(void)
 
 	sum = 0;
 
-	for ( num = 0; num < 1024; num++)
+	for (num = 0; num < 1024; num++)
 	{
 		if (num % 3 == 0 || num % 5 == 0)
 		{

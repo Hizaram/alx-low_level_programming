@@ -21,15 +21,15 @@ char *cap_string(char *s)
 			else if (s[prev] >= 9 && s[prev] <= 10)
 				s[i] = s[i] - 32;
 			else if (s[prev] >= 32 && s[prev] <= 34)
-                                s[i] = s[i] - 32;
+				s[i] = s[i] - 32;
 			else if (s[prev] >= 40 && s[prev] <= 41)
-                                s[i] = s[i] - 32;
+				s[i] = s[i] - 32;
 			else if (s[prev] == 46)
-                                s[i] = s[i] - 32;
+				s[i] = s[i] - 32;
 			else if (s[prev] == 59)
-                                s[i] = s[i] - 32;
+				s[i] = s[i] - 32;
 			else if (s[prev] == 123 || s[prev] == 125)
-                                s[i] = s[i] - 32;
+				s[i] = s[i] - 32;
 		}
 	}
 

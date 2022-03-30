@@ -28,7 +28,7 @@ int length(char *s)
 
 int compare(char *s, int beg, int end)
 {
-	if(s[beg] != s[end])
+	if (s[beg] != s[end])
 		return (0);
 	else if (beg == end && s[beg] == s[end])
 		return (1);

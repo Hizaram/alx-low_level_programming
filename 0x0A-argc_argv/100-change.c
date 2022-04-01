@@ -15,7 +15,7 @@ int make_change(int n)
 	coins = 0;
 	quarters = 0;
 	dimes = 0;
-	nickles = 0;
+	nickels = 0;
 	twocents = 0;
 	pennies = 0;
 
@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		coins = make_change(atoi(argv[i]));
+		coins = make_change(atoi(argv[1]));
 		printf("%d\n", coins);
 	}
 	return (0);

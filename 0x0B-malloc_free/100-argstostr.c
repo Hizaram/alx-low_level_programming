@@ -22,7 +22,7 @@ int _strlen(char *string)
 /**
  * argstostr - concatenates all the arguments to a program
  * @ac: argc - number of arguments
- * @ac: argv - array of arguments
+ * @av: argv - array of arguments
  * Return: pointer to a new string
  */
 

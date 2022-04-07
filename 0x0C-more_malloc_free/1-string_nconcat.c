@@ -20,14 +20,14 @@ int _strlen(char *string)
 }
 
 /**
- * string_noncat - function that concatenates two strings
+ * string_nconcat - function that concatenates two strings
  * @s1: string 1
  * @s2: string 2
  * @n: integer that determines whether entire s2 string will be used
  * Return: pointer to allocated memory corresponding with the sring
  */
 
-char *string_noncat(char *s1, char *s2, unsigned int n)
+char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	unsigned int length1, length2, lengthc, i, j;
 	char *str;

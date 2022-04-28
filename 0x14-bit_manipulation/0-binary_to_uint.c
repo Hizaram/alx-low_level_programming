@@ -50,7 +50,7 @@ unsigned int binary_to_uint(const char *b)
 	sum = 0;
 	if (b == NULL)
 		return (sum);
-	length = _strlen(b);
+	len = _strlen(b);
 	for (i = len - 1; i >= 0; i--)
 	{
 		if (b[i] != '0' && b[i] != '1')

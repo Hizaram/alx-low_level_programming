@@ -25,7 +25,7 @@ size_t dlistint_len(const dlistint_t *h)
  * @head: head of linked list
  * @index: index of node to delete
  *
- * Return: 1 if success, 0 if failure
+ * Return: 1 if success, -1 if failure
  */
 
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
@@ -56,6 +56,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 			temp = temp->next;
 		}
 		free(temp);
+		return (1);
 	}
 	while (temp)
 	{

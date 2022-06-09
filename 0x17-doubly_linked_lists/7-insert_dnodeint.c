@@ -1,4 +1,6 @@
 #include "lists.h"
+#include "2-add_dnodeint.c"
+#include "3-add_dnodeint_end.c"
 
 /**
  * dlistint_len - returns the number of elements in a dlistint_t list

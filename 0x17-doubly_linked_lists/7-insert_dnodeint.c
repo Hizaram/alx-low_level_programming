@@ -19,6 +19,75 @@ size_t dlistint_len(const dlistint_t *h)
 	return (count);
 }
 
+/**
+ * add_dnodeint - adds a node at the beginning of
+ * a doubly linked list
+ * @head: head node of list
+ * @n: data of the node
+ *
+ * Return: the address of the new node, or NULL if it fails
+ */
+
+dlistint_t *add_dnodeint(dlistint_t **head, const int n)
+{
+	dlistint_t *new;
+
+	new = malloc(sizeof(dlistint_t));
+	if (new == NULL)
+		return (NULL);
+	new->n = n;
+	new->prev = NULL;
+
+	if (*head == NULL)
+	{
+		new->next = NULL;
+		*head = new;
+		return (*head);
+	}
+
+	new->next = *head;
+	(*head)->prev = new;
+	*head = new;
+	return (*head);
+}
+
+/**
+ * add_dnodeint_end - adds a node at the end of a list
+ * @head: head of the list
+ * @n: integer value of data
+ *
+ * Return: address of the new element, or NULL if it fails
+ */
+
+dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
+{
+	dlistint_t *new, *temp;
+
+	new = malloc(sizeof(dlistint_t));
+	if (new == NULL)
+		return (NULL);
+
+	new->n = n;
+	new->next = NULL;
+
+	if (*head == NULL)
+	{
+		new->prev = NULL;
+		*head = new;
+		return (*head);
+	}
+
+	temp = *head;
+	while (temp->next)
+	{
+		temp = temp->next;
+	}
+	temp->next = new;
+	new->prev = temp;
+
+	return (new);
+}
+
 
 /**
  * insert_dnodeint_at_index - inserts a node at a given idx
@@ -38,55 +107,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (h == NULL)
 		return (NULL);
 	if (idx == 0)
-	{
-		dlistint_t *new;
-		
-		new = malloc(sizeof(dlistint_t));
-		if (new == NULL)
-			return (NULL);
-		new->n = n;
-		new->prev = NULL;
-		
-		if (*h == NULL)
-		{
-			new->next = NULL;
-			*h = new;
-			return (*h);
-		}
-		
-		new->next = *h;
-		(*h)->prev = new;
-		*h = new;
-		return (*h);
-	}
+		return (add_dnodeint(h, n));
 
 	len = dlistint_len(*h);
 	if (idx == len - 1)
-	{
-		dlistint_t *new, *temp;
-		new = malloc(sizeof(dlistint_t));
-		if (new == NULL)
-			return (NULL);
-		
-		new->n = n;
-		new->next = NULL;
-		
-		if (*h == NULL)
-		{
-			new->prev = NULL;
-			*h = new;
-			return (*h);
-		}
-		
-		temp = *h;
-		while (temp->next)
-		{
-			temp = temp->next;
-		}
-		temp->next = new;
-		new->prev = temp;
-		return (new);
-	}
+		return (add_dnodeint_end(h, n));
 
 	new = malloc(sizeof(dlistint_t));
 	if (new == NULL)

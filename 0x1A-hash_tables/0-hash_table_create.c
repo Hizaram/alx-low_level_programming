@@ -32,3 +32,4 @@ hash_table_t *hash_table_create(unsigned long int size)
 		h_table->array[idx] = NULL;
 
 	return (h_table);
+}

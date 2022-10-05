@@ -41,7 +41,7 @@ int rec_bsearch(int *array, int low, int high, int value)
 
 	print_array(array, low, high);
 
-	mid = (high - low) / 2 + low;
+	mid = low + ((high - low) / 2);
 
 	if (array[mid] == value)
 		return (mid);

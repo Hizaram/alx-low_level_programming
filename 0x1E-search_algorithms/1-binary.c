@@ -51,7 +51,7 @@ int rec_bsearch(int *array, int low, int high, int value)
 	{
 		if (high - low == 1)
 			mid = low;
-		return (rec_bsearch(array, low, mid, value));
+		return (rec_bsearch(array, low, mid - 1, value));
 	}
 	else
 	{
